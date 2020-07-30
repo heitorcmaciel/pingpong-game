@@ -1,0 +1,212 @@
+/* Estilos para customização do sitema NFS-e.io
+v1.0  2020*/
+
+
+
+/** estilos gerais do sistema */
+
+body {font-size: 14px;}
+
+.loader {position: fixed;
+    top: 400px;
+    margin-left: 0;
+    margin-top: 0;
+    left: 50%;}
+
+
+
+/** telas login e esqueci senha **/
+
+#tela-login {background-color: #fff;}
+
+#tela-login h2 {
+    font-weight: 800; color: #2f4050; font-size: 28px; text-align: left; line-height: 34px; margin-top:20px}
+
+#tela-login h3 {
+    font-weight: normal; font-size: 15px; text-align: left; line-height: 24px;color: #2f4050; }
+
+#tela-login .sociais {margin: 30px 0 0 0}
+#tela-login .sociais img {margin: 0 5px;}
+#tela-login .sociais img:hover {opacity: 0.8}
+
+#tela-login small {text-align: left}
+
+#tela-login .btn {font-size: 15px;}
+
+#tela-login .btn-info {margin-top: 30px}
+
+#tela-login .btn-link {color:#fff; text-decoration: underline}
+
+#tela-login .middle-box {margin-top:0;}
+
+#tela-login .imagem-login {text-align: center; margin-top: 60px;}
+#tela-login .responsivo { width: 100%;  max-width: 320px;  height: auto;}
+
+#tela-login .esquerda {
+    background-color: #fff;  }
+
+#tela-login .direita {
+    background-color: #126768; } /*original patricia: 2f4050*/
+
+#tela-login .ibox-content {
+    border-width: 0;
+    background: transparent; }
+
+#tela-login .esqueci-senha, #tela-login .esqueci-senha h2 {
+    color: #fff; }
+
+#tela-login .esqueci-senha {
+text-align: left; }
+
+#tela-login .help-block {
+    color: #f8ac59; }
+
+#tela-login .logo-mobile {margin-bottom: 60px}
+
+
+@media only screen and (min-width: 990px) {
+  #tela-login .esquerda { min-height: 100% }
+
+#tela-login .direita {  min-height: 100% }
+}
+
+
+@media only screen and (max-width: 990px) {
+    #tela-login {background-color: #126768;}
+.wrapper .middle-box {    margin-top: 10px; }
+}
+
+
+/* para mobile */
+
+@media only screen and (max-width: 768px) {
+#tela-login .esquerda {    display: none; }
+}
+
+@media only screen and (min-width: 769px) {
+#tela-login .logo-mobile {    display: none; }
+}
+
+
+
+
+
+/** telas criar conta, wizard... **/
+
+#tela-wizard .pricing-table {background-color: transparent;}
+
+#tela-wizard .wizard > .content {    background: transparent;}
+
+#tela-wizard .btn-proximo {float: right}
+
+#tela-wizard h1 {
+    margin-top: 10px;
+    font-size: 30px;
+    font-weight: 200;}
+
+#tela-wizard .navy-line {
+    width: 60px;
+    height: 1px;
+    margin: 40px auto 0;
+    border-bottom: 2px solid #23C6C8;
+}
+
+
+#tela-wizard .ibox-content {
+    border-width: 0;
+    background: transparent; }
+
+#tela-wizard .wizard > .steps > ul > li {
+    width: 33.33%; }
+
+#tela-wizard .categoria {
+    background-color: rgba(0,0,0,.05); font-weight: 600}
+
+#tela-wizard table th, #tela-wizard table td {text-align: center;}
+
+#tela-wizard table .coluna-esquerda {text-align: left; padding-left: 50px;}
+/*#tela-wizard table tbody{background: #fff}*/
+
+#tela-wizard .table > tbody > tr > td {line-height: 2!important;}
+
+
+#tela-wizard .cor-fundo1 {background: #52DEE0}
+#tela-wizard .cor-fundo2 {background: #22BCBF}
+#tela-wizard .cor-fundo3 {background: #18898B}
+#tela-wizard .cor-fundo4 { background: #126768}
+
+#tela-wizard .cor1 {color: #52DEE0}
+#tela-wizard .cor2 {color: #22BCBF}
+#tela-wizard .cor3 {color: #18898B}
+#tela-wizard .cor4 {color: #126768}
+
+#tela-wizard .table .unidades {font-weight: 600; font-size: 18px; line-height: 1!important;  vertical-align: text-top; padding: 25px 28px}
+#tela-wizard .table .unidades span {font-weight: 600; font-size: 13px; line-height: 1!important;}
+
+#tela-wizard table .btn {border:0; width: 100%; font-size: 15px; font-weight: 600}
+#tela-wizard table .btn:hover {opacity: 0.8}
+
+#tela-wizard .planos {color: #fff; padding: 20px 0; }
+
+#tela-wizard .wizard > .steps .current a {background: #23C6C8;}
+
+#tela-wizard .wizard > .steps {text-align: center; font-weight: 800}
+#tela-wizard .wizard > .steps span {text-align: center; font-weight: 400}
+
+#tela-wizard table h2 {font-size: 22px;}
+#tela-wizard table {font-size: 14.5px;}
+
+#tela-wizard table .text-muted {color: #d2d2d2}
+
+#tela-wizard i {font-size: 18px;}
+
+#tela-wizard .conteudo {background: #fff; margin-top: 50px; padding: 0 0px 40px 0px; box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);}
+
+#tela-wizard .plano-escolhido { width: 200px; height: 200px; border-radius: 250px; padding-top: 20px; margin-top: 30px }
+#tela-wizard .plano-escolhido h2 {    margin-top: 5px; }
+#tela-wizard .plano-escolhido p { font-size: 15px; font-weight: 700;}
+#tela-wizard .plano-escolhido small a {color:#fff; text-decoration: underline; font-size: 12px}
+
+#tela-wizard .form-cadastro label {margin-top: 5px; font-weight: 500; font-size: 15px;}
+
+#tela-wizard .form-pagamento label {margin-top: 5px; font-weight: 500; font-size: 15px;}
+
+#tela-wizard .help-block {    color: #f8ac59; }
+
+#tela-wizard .btn-pagar { box-shadow: inset 0 0 0 #16987e,0 5px 0 0 #16987e, 0 10px 5px #999999 !important; padding: 12px 32px; margin-top: 12px}
+
+#tela-wizard #modal-final-cadastro h1 {font-size: 33px; margin-bottom: 15px; margin-top: 20px;}
+#tela-wizard #modal-final-cadastro p {margin-bottom: 35px;}
+
+#tela-wizard .pricing-table .item {padding:0 0 0 0; margin-bottom: 40px; border: 0}
+
+#tela-wizard .pricing-table .heading {background-color: #23C6C8; color: #fff; padding: 15px; border-bottom: 0; margin-bottom: 0; text-transform: none}
+
+#tela-wizard .pricing-table h2 {font-weight: 300; font-size: 30px; text-transform: lowercase}
+
+#tela-wizard .pricing-table .features h4 {color: #23c6c8;  margin-top: 10px; padding-top: 20px;}
+
+#tela-wizard .pricing-table .ng-scope {border-bottom: 1px solid #e7eaec;}
+
+#tela-wizard .pricing-table .btn-info { height: 50px}
+
+#tela-wizard .pricing-table .price h5 {color:#23c6c8; margin: 24px 0 0 0;}
+
+.pricing-table .price h4 {font-size: 35px; color:#23C6C8; font-weight: 500; margin-top: 0; opacity: 1; padding-top: 8px }
+
+
+#tela-wizard .cartao-bandeiras {    float: right;}
+
+/* para mobile */
+
+@media only screen and (max-width: 768px) {
+    .planos-desktop {display: none;}
+    .plano-escolhido {display: none;}
+}
+
+@media only screen and (min-width: 769px) {
+    .planos-mobile {display: none;}
+}
+
+
+

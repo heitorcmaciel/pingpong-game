@@ -1,0 +1,36 @@
+<nav class="navbar-default navbar-static-side" role="navigation" ng-controller="NavigationCtrl as Navigation">
+	
+	<div class="sidebar-collapse">
+		<ul side-navigation class="nav metismenu" id="side-menu">
+			<li class="nav-header">
+
+				<div class="profile-element" uib-dropdown>
+					<a uib-dropdown-toggle href>
+						<span class="clear">
+							<span class="block m-t-xs">
+								<strong class="font-bold">Joguinho</strong>
+							</span>
+							<span class="text-muted text-xs block">Super Gamer<b class="caret"></b></span>
+						</span>
+					</a>
+					<ul uib-dropdown-menu="" class="animated fadeInRight m-t-xs">
+						<li><a ui-sref="form.profile"><i class="fa fa-address-card"></i>&nbsp;Dados Cadastrais</a></li>
+						<li><a ui-sref="form.settings"><i class="fa fa-cogs"></i>&nbsp;Preferências</a></li>
+						<li class="divider"></li>
+						<li><a ng-click="$root.logout()">Logout</a></li>
+					</ul>
+				</div>
+				<div class="logo-element">
+					
+				</div>
+
+			</li>
+
+			<li ui-sref-active="active">
+				<a ui-sref="home.portal"><i class="fa fa-id-card-o"></i> <span class="nav-label">Ping Pong</span></a>
+			</li>
+			
+		</ul>
+
+	</div>
+</nav>

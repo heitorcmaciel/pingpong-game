@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html ng-app="portal">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <!-- <meta http-equiv="Content-Security-Policy"
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' http://localhost:8080 'unsafe-inline' 'unsafe-eval'; ">-->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' http://localhost:9090 'unsafe-inline' 'unsafe-eval'; ">
+
+     <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../app/assets/images/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="../app/assets/images/favicon.ico" />
+    <link rel="icon" href="../app/assets/images/favicon.ico" />
+
+    <!-- Page title set in pageTitle directive -->
+    <title page-title></title>
+
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+
+    <!-- Bootstrap and Fonts -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/plugins/steps/jquery.steps.css" rel="stylesheet">
+    <link href="assets/css/plugins/angular-notify/angular-notify.min.css" rel="stylesheet">
+    
+
+    <!-- Main Portal CSS files -->
+    <link href="assets/css/animate.css" rel="stylesheet">
+    <link id="loadBefore" href="assets/css/style.css" rel="stylesheet">
+
+
+</head>
+
+<!-- ControllerAs syntax -->
+<!-- Main controller with serveral data used in Portal theme on diferent view -->
+<body ng-controller="MainCtrl as main" class="{{$state.current.data.specialClass}}">
+<!-- Main view  -->
+<div ui-view></div>
+
+<!-- jQuery and Bootstrap -->
+<script src="plugins/jquery/jquery-3.1.1.min.js"></script>
+<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="plugins/bootstrap/bootstrap.min.js"></script>
+
+<!-- MetsiMenu -->
+<script src="plugins/metisMenu/jquery.metisMenu.js"></script>
+
+
+<!-- Main Angular scripts-->
+<!-- Custom and plugin javascript -->
+<script src="plugins/inspinia.js"></script>
+
+
+<!-- SCRIPTS -->
+<!-- build:js js/lib.min.js -->
+<script src="libs/angular/angular.min.js"></script>
+<script src="libs/angular-route/angular-route.min.js"></script>
+<script src="libs/angular-resource/angular-resource.min.js"></script>
+
+<!-- endbuild -->
+<script src="plugins/bootstrap/ui-bootstrap-tpls-1.1.2.min.js"></script>
+
+
+<!-- SCRIPTS -->
+<!-- build:js js/dashboard.min.js -->
+<script src="libs/angular-input-masks/angular-input-masks-standalone.min.js"></script>
+<script src="libs/ui-router/angular-ui-router.min.js"></script>
+<script src="solution/app.js"></script>
+<script src="solution/config.js"></script>
+<script src="solution/services/appStateService.js"></script>
+<script src="solution/services/httpService.js"></script>
+<script src="solution/controllers/mainController.js"></script>
+<script src="solution/controllers/indexController.js"></script>
+<script src="solution/controllers/navigationController.js"></script>
+
+<!-- endbuild -->
+<script src="plugins/directives.js"></script>
+<script src="plugins/angular-notify/angular-notify.min.js"></script>
+
+</body>
+</html>
