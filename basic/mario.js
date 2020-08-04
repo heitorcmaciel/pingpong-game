@@ -3,11 +3,13 @@ class Mario {
     image;
     direction;
     walking;
+    sound;
     constructor(imageSrc) {        
         this.image = new Image();   // Create new image element
         this.image.src = imageSrc; 
         this.direction = 1;
-        
+        this.sound = new Audio();
+        this.sound.src = "assets/jump.mp3";   
         this.walking = null;
         this.coord = {
                 x : 200,
@@ -45,10 +47,12 @@ class Mario {
         
         if (this.coord.y == 190) {
 
-            this.coord.y = (this.coord.y - 15);
+            this.coord.y = (this.coord.y - 30);
+
+            this.sound.play();
 
             setTimeout(function() {
-                this.mario.coord.y = (this.mario.coord.y + 15);
+                this.mario.coord.y = (this.mario.coord.y + 30);
             }, 600);
 
         }

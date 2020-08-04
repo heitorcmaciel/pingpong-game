@@ -1,12 +1,16 @@
 // Set source path
 var canvas = document.getElementById("rpg");
 var ctx;
+var sound;
+
 
 if (canvas.getContext) {
     ctx = canvas.getContext("2d");
+ 
 }
 
-
+var sound = new Audio();
+sound.src = "assets/bgmusic.mp3";
 var mario = new Mario('assets/mario.png');  
 var box = new Box('assets/box.png');
 
@@ -30,15 +34,17 @@ function getKeyboardKey (evt) {
 
         mario.turn('right');
         mario.walk(mario.direction);
+    } 
+    else if (evt.keyCode == '13') {
+        sound.play();
     }
+        
 
 }
 
 function update () {
-
-    if (box.coord.x == mario.coord.x) {
-        console.log ("hit");
-    }
+    box.coin();
+    
 }
 
 
@@ -63,5 +69,4 @@ function game () {
 var loop = setInterval(() => {
     game();
  }, 1000/50);
-
 
