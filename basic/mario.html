@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
 <head>
-	<title>Fried Bat Games | Ping Pong</title>
+	<title>Fried Bat Games | Mario Bugado</title>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<meta name="generator" content="Fernando 1.0" />
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
@@ -20,12 +20,10 @@
 			.bd-placeholder-img-lg {
 				font-size: 3.5rem;
 			}
+            
 		}
-        body {
-            background-color: #090088;
-        }
-        #pong {
-            border: 2px solid #fff;
+        #rpg {
+            border: 2px solid brown;
             position: absolute;
             margin: auto;
             top: 0;
@@ -37,7 +35,6 @@
 
 
 </head>
-
 
 <body class="d-flex flex-column h-100">
 	<header>
@@ -63,7 +60,12 @@
 				<!-- <form class="form-inline mt-2 mt-md-0">
 					<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
 					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-				</form> -->
+                </form> -->
+                <style>
+                    body {
+                        background-color: #090088;
+                    }
+                </style>
 			</div>
 		</nav>
 	</header>
@@ -72,11 +74,16 @@
 	<main role="main" class="flex-shrink-0">
 		<div class="container">
 			<!-- <h1 class="mt-5">Sticky footer with fixed navbar</h1> -->
-            <canvas id="pong" width="600" height="400">
-            </canvas>
+		
 		</div>
 	</main>
-    <script src="pong.js"></script>
+		<canvas id="rpg" width="600" height="400"></canvas>
+		<script src="solution/items/base/sound.js"></script>
+		<script src="solution/items/box.js"></script>
+		<script src="solution/items/mario.js"></script>
+		<script src="solution/items/scenario.js"></script>
+		<script src="solution/mariogame.js"></script>
+	
 	<script src="libs/jquery.3.5.1.slim.min.js"
 		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
 		crossorigin="anonymous"></script>

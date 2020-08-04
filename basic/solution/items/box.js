@@ -2,11 +2,11 @@ class Box {
     coord;
     image;
     sound;
-    constructor(imageSrc) {        
+    constructor() {        
         this.image = new Image();   // Create new image element
-        this.image.src = imageSrc; 
-        this.sound = new Audio();
-        this.sound.src = "assets/plim.mp3";
+        this.image.src = 'assets/box.png'; 
+        this.sound = new Sound("assets/plim.mp3");
+        
         this.coord = {
             x : 280,
             y : 160,

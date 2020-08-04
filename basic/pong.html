@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
 <head>
-	<title>Fried Bat Games | Mario Bugado</title>
+	<title>Fried Bat Games | Ping Pong</title>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<meta name="generator" content="Fernando 1.0" />
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
@@ -20,10 +20,12 @@
 			.bd-placeholder-img-lg {
 				font-size: 3.5rem;
 			}
-            
 		}
-        #rpg {
-            border: 2px solid brown;
+        body {
+            background-color: #090088;
+        }
+        #pong {
+            border: 2px solid #fff;
             position: absolute;
             margin: auto;
             top: 0;
@@ -35,6 +37,7 @@
 
 
 </head>
+
 
 <body class="d-flex flex-column h-100">
 	<header>
@@ -53,19 +56,11 @@
 					<li class="nav-item">
 						<a class="nav-link" href="gamelist.html">Games</a>
 					</li>
-					<!-- <li class="nav-item">
-						<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-					</li> -->
 				</ul>
 				<!-- <form class="form-inline mt-2 mt-md-0">
 					<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
 					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form> -->
-                <style>
-                    body {
-                        background-color: #090088;
-                    }
-                </style>
+				</form> -->
 			</div>
 		</nav>
 	</header>
@@ -74,14 +69,11 @@
 	<main role="main" class="flex-shrink-0">
 		<div class="container">
 			<!-- <h1 class="mt-5">Sticky footer with fixed navbar</h1> -->
-		
+            <canvas id="pong" width="600" height="400">
+            </canvas>
 		</div>
 	</main>
-		<canvas id="rpg" width="600" height="400"></canvas>
-		<script src="box.js"></script>
-		<script src="mario.js"></script>
-		<script src="rpg.js"></script>
-	
+    <script src="solution/ponggame.js"></script>
 	<script src="libs/jquery.3.5.1.slim.min.js"
 		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
 		crossorigin="anonymous"></script>
