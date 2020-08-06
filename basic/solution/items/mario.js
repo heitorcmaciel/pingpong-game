@@ -46,7 +46,7 @@ class Mario {
 
 	jump() {
 
-		// if (this.coord.y == 190) {
+		if (this.coord.y == 285) {
 
 			this.coord.y = (this.coord.y - 30);
 
@@ -56,7 +56,7 @@ class Mario {
 				this.mario.coord.y = (this.mario.coord.y + 30);
 			}, 600);
 
-		// }
+		}
 	}
 
 	turn(dir) {
