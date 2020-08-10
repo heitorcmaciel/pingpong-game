@@ -8,6 +8,7 @@ if (canvas.getContext) {
 	ctx = canvas.getContext("2d");
 }
 
+var bowser = new Bowser();
 var scenario = new Scenario();
 var mario = new Mario();
 var box = new Box();
@@ -15,6 +16,24 @@ var box = new Box();
 
 function replay() {
 	scenario.bgSound.play();
+}
+
+// function colision(bowser, mario) {
+// 	bowser.top = mario.coord.y;
+//     bowser.bottom = mario.coord.y + mario.coord.h;
+//     bowser.left = mario.coord.x;
+//     bowser.right = mario.coord.x + mario.coord.w;
+
+//     bowser.top = bowser.coord.y - bowser.coord.w;
+//     bowser.bottom = bowser.coord.y + bowser.coord.w;
+//     bowser.left = bowser.coord.x - bowser.coord.w;
+// 	bowser.right = bowser.coord.x + bowser.coord.w;
+	
+// 	return mario.left < bowser.right && mario.top < bowser.bottom && mario.right > bowser.left && mario.bottom > bowser.top;
+// }
+
+if(mario.coord.x == bowser.coord.x) {
+	console.log ("game over");
 }
 
 window.addEventListener('ended', replay);
@@ -65,6 +84,7 @@ function render() {
 	ctx.drawImage(scenario.image, scenario.coord.x, scenario.coord.y, scenario.coord.w, scenario.coord.h);
 	ctx.drawImage(mario.image, mario.coord.x, mario.coord.y, mario.coord.w, mario.coord.h);
 	ctx.drawImage(box.image, box.coord.x, box.coord.y, box.coord.w, box.coord.h);
+	ctx.drawImage(bowser.image, bowser.coord.x, bowser.coord.y, bowser.coord.w, bowser.coord.h);
 }
 
 function game() {
