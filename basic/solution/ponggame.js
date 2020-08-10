@@ -2,6 +2,20 @@
 var canvas = document.getElementById("pong");
 //criando variavel "ctx" chamando o contexto 2d do canvas
 var ctx = canvas.getContext("2d");
+
+
+// load sounds
+let hit = new Audio();
+let wall = new Audio();
+let userScore = new Audio();
+let comScore = new Audio();
+
+hit.src = "assets/hit.mp3";
+wall.src = "assets/wall.mp3";
+comScore.src = "assets/comScore.mp3";
+userScore.src = "assets/userScore.mp3";
+
+
 //criando a variavel "ball"
 var ball = {
     x : canvas.width/2,
@@ -46,6 +60,15 @@ function drawArc(x, y, r, color) {
     ctx.closePath();
     ctx.fill();
 }
+
+// draw text
+function drawText(text,x,y){
+    ctx.fillStyle = "#FFF";
+    ctx.font = "75px fantasy";
+    ctx.fillText(text, x, y);
+}
+
+
 //cria a raquete do player
 function drawRect (x, y, w, h, color) {
     ctx.fillStyle = color;
@@ -65,7 +88,7 @@ window.addEventListener('mousemove', getMousePos);
 function getMousePos (evt) {
  var rect = canvas.getBoundingClientRect ();
     user.y = evt.clientY - rect.top - user.height/2;
-    com.y = evt.clientY - rect.top - com.height/2;
+    // com.y = evt.clientY - rect.top - com.height/2;
 }
 //controla a raquete com os botões do teclado
 function getKeyboardKey (evt) {
@@ -97,18 +120,41 @@ function colision(b,p) {
     return p.left < b.right && p.top < b.bottom && p.right > b.left && p.bottom > b.top;
 }
 
+function resetBall(){
+    ball.x = canvas.width/2;
+    ball.y = canvas.height/2;
+    ball.velocityX = -ball.velocityX;
+    ball.speed = 7;
+}
+
 //atualiza o render e testa a colisão entre o player e a bola
 function update () {
+
+    if( ball.x - ball.radius < 0 ){
+        com.score++;
+        comScore.play();
+        resetBall();
+    }else if( ball.x + ball.radius > canvas.width){
+        user.score++;
+        userScore.play();
+        resetBall();
+    }
+
     ball.x += ball.velocityX;
     ball.y += ball.velocityY;
 
+    com.y += ((ball.y - (com.y + com.height/2)))*0.1;
+
     if(ball.y - ball.radius < 0 || ball.y + ball.radius > canvas.height) {
         ball.velocityY = -ball.velocityY;
+        wall.play();
     }
     
     var player = (ball.x + ball.radius < canvas.width/2) ? user : com;
 
     if (colision(ball,player)){
+        hit.play();
+
         var collidePoint = (ball.y - (player.y + player.height/2));
         collidePoint = collidePoint / (player.height/2);
         var angleRad = (Math.PI/4) * collidePoint;
@@ -124,6 +170,13 @@ function update () {
 //rederizando o jogo
 function render () {
     drawRect (0, 0, canvas.width, canvas.height, "BLACK");
+
+    // draw the user score to the left
+    drawText(user.score,canvas.width/4,canvas.height/5);
+    
+    // draw the COM score to the right
+    drawText(com.score,3*canvas.width/4,canvas.height/5);
+
     drawNet ();
     drawRect (user.x, user.y, user.width, user.height, user.color);
     drawRect (com.x, com.y, com.width, com.height, com.color)
