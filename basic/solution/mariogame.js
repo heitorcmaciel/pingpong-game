@@ -15,7 +15,7 @@ var box = new Box();
 
 
 function replay() {
-	scenario.bgSound.play();
+	// scenario.bgSound.play();
 }
 
 // function colision(bowser, mario) {
@@ -31,6 +31,13 @@ function replay() {
 	
 // 	return mario.left < bowser.right && mario.top < bowser.bottom && mario.right > bowser.left && mario.bottom > bowser.top;
 // }
+
+// draw text
+function drawText(text,x,y){
+    ctx.fillStyle = "#000";
+    ctx.font = "75px";
+    ctx.fillText(text, x, y);
+}
 
 if(mario.coord.x == bowser.coord.x) {
 	console.log ("game over");
@@ -58,13 +65,21 @@ function getKeyboardKey(evt) {
 		mario.turn('right');
 		mario.walk(mario.direction);
 		scenario.scroll('right');
+	} else if (evt.keyCode == '13') {
+		scenario.enter.click();
 	}
-	else if (evt.keyCode == '13') {
-		scenario.bgSound.play();
-	}
-
-
 }
+
+
+// 	function collides()
+//     	{
+//         if ((mario.coord.x + mario.coord.w/2) >= (box.coord.x) &&
+//             (mario.coord.y - mario.coord.h/2) <= (box.coord.h))
+//             console.log('opa') 
+//             //return true;
+// 	}
+
+// }
 
 function update() {
 	box.coin();
@@ -83,8 +98,12 @@ function render() {
 	// drawRect(0, 0, canvas.width, canvas.height, "LIGHTBLUE");
 	ctx.drawImage(scenario.image, scenario.coord.x, scenario.coord.y, scenario.coord.w, scenario.coord.h);
 	ctx.drawImage(mario.image, mario.coord.x, mario.coord.y, mario.coord.w, mario.coord.h);
+	ctx.strokeRect(mario.coord.x, mario.coord.y, mario.coord.w, mario.coord.h);
 	ctx.drawImage(box.image, box.coord.x, box.coord.y, box.coord.w, box.coord.h);
 	ctx.drawImage(bowser.image, bowser.coord.x, bowser.coord.y, bowser.coord.w, bowser.coord.h);
+	ctx.drawImage(scenario.enter.image, scenario.enter.coord.x, scenario.enter.coord.y, scenario.enter.coord.w, scenario.enter.coord.h);
+	drawText(`mario => x: ${mario.coord.x}, y: ${mario.coord.y}`, 100, 100);
+	drawText(`box => x: ${box.coord.x}, y: ${box.coord.y}`, 100, 120);
 }
 
 function game() {

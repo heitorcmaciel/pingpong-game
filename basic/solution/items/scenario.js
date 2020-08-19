@@ -3,10 +3,13 @@ class Scenario {
   bgSound;
   image;
   coord;
+  enter;
   constructor () {
     this.bgSound = new Sound("assets/bgmusic.mp3");
     this.image = new Image();
     this.image.src = "assets/phase-1.png";
+
+    this.enter = new Enter();
 
     this.coord = {
       x: 0,
@@ -24,5 +27,6 @@ class Scenario {
       this.coord.x -= 20;
     }
   }
+
 
 }

@@ -9,7 +9,7 @@ class Box {
         
         this.coord = {
             x : 280,
-            y : 160,
+            y : 220,
             w : 60,
             h : 60,
         }
@@ -26,5 +26,6 @@ class Box {
             }, 600)
         }
     }
+ 
 
 }
